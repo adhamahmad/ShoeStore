@@ -30,6 +30,7 @@ class ShoeDetailsFragment :Fragment(){
             if(clicked){
                 // code that gets called anytime the livedata(new shoe is added) is changed
                 viewModel.afterSaveClick() // return it back to false
+                viewModel.resetVariables() // called after save or cancel so that the textViews become empty again
                 goToShoeList()
             }
         })
@@ -40,6 +41,7 @@ class ShoeDetailsFragment :Fragment(){
             if(clicked){
                 // code that gets called anytime the livedata(new shoe is added) is changed
                 viewModel.afterCancelClick() // return it back to false
+                viewModel.resetVariables() // called after save or cancel so that the textViews become empty again
                 goToShoeList()
             }
         })

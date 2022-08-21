@@ -9,6 +9,10 @@ import com.udacity.shoestore.models.Shoe
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel : ViewModel(){
+    var name:String = ""
+    var company:String = ""
+    var size:String = ""
+    var description: String = ""
 
      private var _shoes = mutableListOf<Shoe>()
      private var _shoesList =  MutableLiveData<List<Shoe>>(_shoes)
@@ -62,5 +66,12 @@ class MainActivityViewModel : ViewModel(){
          _saveClicked.value = false
      }
 
+    fun resetVariables(){
+        // called after save or cancel so that the textViews become empty again
+        name = ""
+        company = ""
+        description = ""
+        size = ""
+    }
 
 }
